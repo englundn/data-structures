@@ -29,3 +29,5 @@ stackMethods.pop = function() {
     return result;
   }
 };
+
+// var newStack = new Stack();
