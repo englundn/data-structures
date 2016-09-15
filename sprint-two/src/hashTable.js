@@ -18,8 +18,7 @@ HashTable.prototype.retrieve = function(k) {
 
 HashTable.prototype.remove = function(k) {
   var index = this.getIndexBelowMaxForKey(k, this._limit);
-  delete this._storage['' + index];
-  // this._storage.set(index, undefined);
+  this._storage.set(index, undefined);
 };
 
 
