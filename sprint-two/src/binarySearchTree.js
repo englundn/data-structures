@@ -5,7 +5,7 @@ var BinarySearchTree = function(value) {
   newTree.left = null;
   newTree.right = null;
 
-  _.extend(newTree, treeMethods);
+  _.extend(newTree, binaryTreeMethods);
   return newTree;
 };
 
@@ -14,9 +14,9 @@ var BinarySearchTree = function(value) {
  * Complexity: What is the time complexity of the above functions?
  */
 
-var treeMethods = {};
+var binaryTreeMethods = {};
 
-treeMethods.insert = function(value) {
+binaryTreeMethods.insert = function(value) {
   
   var node = this;
   var hasNode = true;
@@ -44,7 +44,7 @@ treeMethods.insert = function(value) {
   }
 };
 
-treeMethods.contains = function(value) { 
+binaryTreeMethods.contains = function(value) { 
 
   var hasValue = true;
 
@@ -66,7 +66,7 @@ treeMethods.contains = function(value) {
   return false;
 };
 
-treeMethods.depthFirstLog = function(cb) {
+binaryTreeMethods.depthFirstLog = function(cb) {
 
   cb(this.value);
 
