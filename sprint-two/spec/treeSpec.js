@@ -56,5 +56,17 @@ describe('tree', function() {
 
   });
 
+  it('should traverse properly', function() {
+    tree.addChild(5);
+    tree.addChild(6);
+    tree.children[0].addChild(7);
+    tree.children[1].addChild(8);
+    var arr = [];
+    tree.traverse(function(val) {
+      arr.push(val);
+    });
+    expect(arr.sort()).to.equal([5, 6, 7, 8]);    
+  });
+
 
 });
