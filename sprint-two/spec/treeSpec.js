@@ -43,7 +43,7 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
-  it('should correctly remove from parent', function() {
+  it('should correctly disassociated from parent', function() {
     tree.addChild(5);
     tree.addChild(6);
     tree.children[0].addChild(7);
@@ -52,9 +52,7 @@ describe('tree', function() {
     expect(child.parent).to.equal(null);
     expect(child.value).to.equal(5);
     expect(tree.children[0].value).to.equal(6);
-    console.log(tree);
-
-
+    expect(tree.contains(5)).to.equal(false);
 
   });
 
