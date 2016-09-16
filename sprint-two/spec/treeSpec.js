@@ -48,8 +48,14 @@ describe('tree', function() {
     tree.addChild(6);
     tree.children[0].addChild(7);
     tree.children[1].addChild(8);
-    tree.children[0].removeFromParent();
-    expect(tree.parent).to.equal(null);    
+    var child = tree.children[0].removeFromParent();
+    expect(child.parent).to.equal(null);
+    expect(child.value).to.equal(5);
+    expect(tree.children[0].value).to.equal(6);
+    console.log(tree);
+
+
+
   });
 
 

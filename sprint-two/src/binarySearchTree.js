@@ -10,10 +10,6 @@ var BinarySearchTree = function(value) {
 };
 
 
-/*
- * Complexity: What is the time complexity of the above functions?
- */
-
 var binaryTreeMethods = {};
 
 binaryTreeMethods.insert = function(value) {
@@ -80,7 +76,12 @@ binaryTreeMethods.depthFirstLog = function(cb) {
 };
 
 
-
+/*
+ * Complexity: What is the time complexity of the above functions?
+ * insert: log(n)
+ * contains: log(n)
+ * depthFirstLog: n
+ */
 
 
 

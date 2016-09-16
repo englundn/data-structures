@@ -1,6 +1,7 @@
-var Tree = function(value) {
+var Tree = function(value, parent) {
   var newTree = {};
   newTree.value = value;
+  newTree.parent = parent || null;
 
   // your code here
   newTree.children = [];  // fix me
@@ -11,7 +12,7 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-  this.children.push(Tree(value));
+  this.children.push(Tree(value, this));
 };
 
 treeMethods.contains = function(target) {
@@ -27,9 +28,18 @@ treeMethods.contains = function(target) {
   return false;
 };
 
+treeMethods.removeFromParent = function() {
+  var index = this.parent.children.indexOf(this);
+  var childArr = this.parent.children.splice(index, 1)[0];
+  childArr.parent = null;
+  return childArr;
+};
+
 
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * addChild: 1
+ * contains: n
+ * removeFromParent: n
  */
- 
