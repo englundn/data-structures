@@ -63,7 +63,6 @@ binaryTreeMethods.contains = function(value) {
 };
 
 binaryTreeMethods.depthFirstLog = function(cb) {
-
   cb(this.value);
 
   if (this.left) {
@@ -73,6 +72,29 @@ binaryTreeMethods.depthFirstLog = function(cb) {
   if (this.right) {
     this.right.depthFirstLog(cb);
   }
+};
+
+binaryTreeMethods.breadthFirstLog = function(cb) {
+
+  var funName = function(arr) {
+    var tempArr = [];
+    arr.forEach(function(item) {
+      cb(item.value);
+      if (item.left) {
+        tempArr.push(item.left);
+      }
+
+      if (item.right) {
+        tempArr.push(item.right);
+      }      
+    });
+    if (tempArr.length) {
+      funName(tempArr);
+    }
+  };
+
+  funName([this]);
+
 };
 
 

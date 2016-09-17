@@ -30,7 +30,6 @@ HashTable.prototype.insert = function(k, v) {
 
   if (this._size > this._limit * 0.75) {
     this._limit *= 2;
-    console.log('' + this._limit + ' ' + this._size);
     this.reHash();
   }
 

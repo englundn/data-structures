@@ -61,11 +61,11 @@ describe('tree', function() {
     tree.addChild(6);
     tree.children[0].addChild(7);
     tree.children[1].addChild(8);
-    var arr = [];
+    var resultArr = [];
     tree.traverse(function(val) {
-      arr.push(val);
+      resultArr.push(val);
     });
-    expect(arr.sort()).to.equal([5, 6, 7, 8]);    
+    expect(resultArr.sort()).to.eql([5, 6, 7, 8]);    
   });
 
 
